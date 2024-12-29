@@ -1,20 +1,31 @@
-﻿#include <iostream>
-#include "Animal.h"
-using namespace std;
+﻿#include "Animal.h"
+#include "Zoo.h"
+#include <iostream>
 
 int main()
 {
-    Animal* animal[3] = {new Dog(), new Cat(), new Cow()};
+    std::srand(static_cast<unsigned int>(time(nullptr)));
     
+    Animal* animals[3] = {new Dog(), new Cat(), new Cow()};
+
     for (int i = 0; i < 3; i++)
     {
-        animal[i] -> MakeSound();
+        animals[i]->MakeSound();
     }
 
     for (int i = 0; i < 3; i++)
     {
-        delete animal[i];
+        delete animals[i];
     }
+
+    Zoo zoo;
+    for (int i = 0; i < 3; i++)
+    {
+        zoo.addAnimal(zoo.createRandomAnimal());
+    }
+
+    std::cout << "Zoo created" << '\n';
+    zoo.performActions();
 
     return 0;
 }

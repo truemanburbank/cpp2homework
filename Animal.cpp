@@ -1,17 +1,17 @@
-﻿#include "Animal.h"
-#include <iostream>
+﻿#include <iostream>
+#include "Animal.h"
 
-void Dog::MakeSound() 
+void Dog::MakeSound() const
 {
     std::cout << "woof" << '\n';
 }
 
-void Cat::MakeSound() 
+void Cat::MakeSound() const
 {
-    std::cout << "meow" << '\n';
+    std::cout << "mew" << '\n';
 }
 
-void Cow::MakeSound() 
+void Cow::MakeSound() const
 {
-    std::cout << "ummmm..." << '\n';
+    std::cout << "moo" << '\n';
 }

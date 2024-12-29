@@ -4,26 +4,26 @@
 class Animal
 {
 public:
+    virtual void MakeSound() const = 0;
     virtual ~Animal() = default;
-    virtual void MakeSound() = 0;
 };
 
 class Dog : public Animal
 {
 public:
-    void MakeSound();
+    void MakeSound() const override;
 };
 
 class Cat : public Animal
 {
 public:
-    void MakeSound();
+    void MakeSound() const override;
 };
 
 class Cow : public Animal
 {
 public:
-    void MakeSound();
+    void MakeSound() const override;
 };
 
-#endif // ANIMAL_H
+#endif
